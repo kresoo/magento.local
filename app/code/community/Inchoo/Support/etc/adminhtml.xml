@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+     <menu>
+           <sales>
+               <children>
+                   <inchoo_support translate="title" module="inchoo_support">
+                         <title>Support tickets</title>
+                         <action>adminhtml/ticket/</action>
+                   </inchoo_support>
+                </children>
+           </sales>
+     </menu>
+</config>

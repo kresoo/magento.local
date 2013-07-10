@@ -1,0 +1,33 @@
+<?php
+
+$ticket_id = $this->getRequest()->getParam('ticket_id');
+$ticket = Mage::getModel('inchoo_support/ticket')->getCollection()->addFieldToFilter('ticket_id',$ticket_id)->getFirstItem();
+
+?>
+
+<div class="page-title">
+    <h1><?php echo $this->__('View Ticket') ?></h1>
+</div>
+<table class="data-table">
+    <tr>
+        <th> <?php echo $this->__('Title') ?> </th>
+        <th> <?php echo $this->__('Decription');?> </th>
+        <th> <?php echo $this->__('Comment');?> </th>
+        <th> <?php echo $this->__('Created');?> </th>
+        <th> <?php echo $this->__('Resolved');?> </th>
+    </tr>
+    <tr>
+        <td><?php echo $ticket->getTitle(); ?></td>
+        <td><?php echo $ticket->getDescription(); ?></td>
+        <td><?php echo $ticket->getComment(); ?></td>
+        <td><?php echo $ticket->getCreated(); ?></td>
+        <?php if($ticket->getFlag() == 1): ?>
+              <td><?php echo $ticket->getResolved(); ?></td>
+        <?php else : ?>
+              <td><?php echo $this->__('Not resolved.'); ?></td>
+         <?php endif; ?>
+    </tr>
+</table>
+<div class="buttons-set">
+    <a class="button" href="<?php echo Mage::getUrl('inchoo_support/ticket/index'); ?>"> Back </a>
+</div>

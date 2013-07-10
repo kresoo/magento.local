@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+     <menu>
+           <sales>
+               <children>
+                   <inchoo_exchange translate="title" module="inchoo_support">
+                         <title>Exchange rate</title>
+                         <action>adminhtml/exchange/</action>
+                   </inchoo_exchange>
+                </children>
+           </sales>
+     </menu>
+</config>

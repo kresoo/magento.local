@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+   <modules>
+        <Inchoo_Payment>
+            <version>1.0.0.0</version>
+        </Inchoo_Payment>
+   </modules>
+    <global>
+        <blocks>
+            <inchoo_payment>
+                <class>Inchoo_Payment_Block</class>
+            </inchoo_payment>
+        </blocks>
+        
+        <helpers>
+            <inchoo_payment>
+                <class>Inchoo_Payment_Helper</class>
+            </inchoo_payment>
+        </helpers>
+        
+        <models>
+            <inchoo_payment>
+                <class>Inchoo_Payment_Model</class>
+                <resourceModel>inchoo_payment_resource</resourceModel>
+            </inchoo_payment>
+        </models>
+    </global>
+    <default>
+          <payment>
+                <inchoopayment>
+                        <active>1</active>
+                        <sallowspecific>0</sallowspecific>
+                        <model>inchoo_payment/method_payment</model>
+                        <name>Inchoo Custom Payment Method</name>
+                        <price>5.00</price>
+                        <title>Inchoo Custom Payment Method</title>
+                        <type>I</type>
+                        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+                        <handling_type>F</handling_type>
+                </inchoopayment>
+         </payment>
+      </default>
+</config>

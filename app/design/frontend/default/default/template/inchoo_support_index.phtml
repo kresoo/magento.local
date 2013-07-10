@@ -1,0 +1,69 @@
+<?php
+
+$userId = Mage::getSingleton('customer/session')->getCustomer()->getId();
+$ticketCollection = Mage::getModel('inchoo_support/ticket')->getCollection()->addFieldToFilter('user_id', array (eq => $userId));
+
+?>
+<div class="page-title">
+    <h1><?php echo $this->__('New Ticket') ?></h1>
+</div>
+<form action="<?php echo Mage::getUrl('inchoo_support/ticket/create') ?>" method="post" id="support-validate">
+    <div class="fieldset">
+        <h2 class="legend"><?php echo $this->__('Ticket Information') ?></h2>
+        <ul class="form-list">
+            <li class="fields">
+                <div class="field">
+                    <label for="title" class="required"><em>*</em>Title</label>
+                    <div class="input-box">
+                        <input id="title" class="input-box required-entry" type="text" name="title" />
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="field">
+                    <label for="ticket_body" class="required"><em>*</em>Text</label>
+                    <div class="input-box">
+                        <textarea id="ticket_body" class="textarea required-entry" name="ticket_body" rows="5"></textarea>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="buttons-set">
+        <button type="submit" title="<?php echo $this->__('Submit ticket') ?>" class="button"><span><span><?php echo $this->__('Submit ticket') ?></span></span></button>
+    </div>
+</form>
+
+<?php if(count($ticketCollection) > 0): ?>
+    <h1><?php echo $this->__("List of submited tickets")?></h1>
+    <table class="data-table">
+        <tr>
+            <th><?php echo $this->__('Title');?></th>
+            <th><?php echo $this->__('Decription');?></th>
+            <th><?php echo $this->__('Created');?></th>
+            <th><?php echo $this->__('Resolved');?></th>
+            <th></th>
+        </tr>
+        <?php foreach($ticketCollection as $ticket): ?>
+            <tr>
+                <td><?php echo $ticket->getTitle(); ?></td>
+                <td><?php echo $ticket->getDescription(); ?></td>
+                <td><?php echo $ticket->getCreated(); ?></td>
+                <?php if($ticket->getFlag() == 1): ?>
+                    <td><?php echo $ticket->getResolved(); ?></td>
+                <?php else : ?>
+                    <td><?php echo $this->__('Not resolved.'); ?></td>
+                <?php endif; ?>
+                <td> <a href="<?php echo Mage::getUrl('inchoo_support/ticket/view', array('ticket_id' => $ticket->getTicket_id()));  ?>"> View </a> </td>
+            </tr>
+         <?php endforeach; ?>
+    </table>
+<?php else: ?>
+    <h1><?php echo $this->__("You have not submited any tickets")?></h1>
+<?php endif; ?>
+
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('support-validate', true);
+//]]>
+</script>

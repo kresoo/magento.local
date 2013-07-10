@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Inchoo_Support>
+            <version>1.0.0.0</version>
+        </Inchoo_Support>
+    </modules>
+
+    <global>
+        <blocks>
+            <inchoo_support>
+                <class>Inchoo_Support_Block</class>
+            </inchoo_support>
+        </blocks>
+        
+        <helpers>
+            <inchoo_support>
+                <class>Inchoo_Support_Helper</class>
+            </inchoo_support>
+        </helpers>
+        
+        <models>
+            <inchoo_support>
+                <class>Inchoo_Support_Model</class>
+                <resourceModel>inchoo_support_resource</resourceModel>
+            </inchoo_support>
+            <inchoo_support_resource>
+                <class>Inchoo_Support_Model_Resource</class>
+                <entities>
+                    <inchoo_support_ticket>
+                        <table>inchoo_support_ticket</table>
+                    </inchoo_support_ticket>
+                </entities>
+            </inchoo_support_resource>
+        </models>
+        
+      <resources>
+            <inchoo_support_setup>
+                <setup>
+                    <module>Inchoo_Support</module>
+                </setup>
+            </inchoo_support_setup>
+        </resources>
+    </global>
+    
+    <frontend>
+        <routers>
+            <inchoo_support>
+                <use>standard</use>
+                <args>
+                    <module>Inchoo_Support</module>
+                    <frontName>inchoo_support</frontName>
+                </args>
+            </inchoo_support>
+        </routers>
+        <layout>
+            <updates>
+                <inchoo_support module="Inchoo_Support">
+                    <file>inchoo_support.xml</file>
+                </inchoo_support>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <inchoo_support before="Mage_Adminhtml">Inchoo_Support_Adminhtml</inchoo_support>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

@@ -1,0 +1,24 @@
+<?php
+$param = $this->getRequest()->getParam('id');
+$tickets = Mage::getModel('inchoo_support/ticket')->getCollection()->addFieldToFilter('ticket_id', $param);
+?>
+<div class="fieldset">
+    <?php foreach ($tickets as $ticket): ?>
+        <h2 class="legend"><?php echo $ticket->getTitle(); ?></h2>
+        <h3 class="text">Description:</h3>
+        <p><?php echo $ticket->getDescription(); ?></p>
+        <h3 class="text">Date Created:</h3>
+        <p><?php echo $ticket->getCreated(); ?></p>
+        <h3 class="text">Resolved:</h3>
+        <?php if ($ticket->getFlag() == 1): ?>
+            <p><?php echo $ticket->getResolved(); ?></p>
+        <?php else: ?>
+            <p><?php echo $this->__('Not Resolved'); ?></p>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</div>
+<div class="fieldset">
+    <h2 class="legend"><?php echo $this->__('Admin Comments') ?></h2>
+    <h3 class="text">Comments:</h3>
+    <p><?php echo $ticket->getComment(); ?></p>
+</div>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <version>1.0.0.0</version>
+    </modules>
+    <global>
+        <models>
+            <inchoo_gift>
+                <class>Inchoo_Gift_Model</class>
+                <resourceModel>inchoo_gift_resource</resourceModel>
+            </inchoo_gift>
+            <inchoo_gift_resource>
+                <class>Inchoo_Gift_Model_Resource</class>
+                <entities>
+                    <giftentity>
+                        <table> inchoo_gift_giftentity </table>
+                    </giftentity>
+                </entities>
+            </inchoo_gift_resource>
+        </models>
+        <blocks>
+            <inchoo_gift>
+                <class>Inchoo_Gift_Block</class>
+            </inchoo_gift>
+        </blocks>
+        <helpers>
+            <inchoo_gift>
+                <class>Inchoo_Gift_Helper</class>
+            </inchoo_gift>
+        </helpers>
+        <resources>
+            <inchoo_gift_setup>
+                <setup>
+                    <module>Inchoo_Gift</module>
+                </setup>
+            </inchoo_gift_setup>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <inchoo_gift>
+                <use>standard</use>
+                <args>
+                    <module>Inchoo_Gift</module>
+                    <frontName>giftregistry</frontName>
+                </args>
+            </inchoo_gift>
+        </routers>
+        <layout>
+            <updates>
+                <inchoo_gift module="inchoo_gift">
+                    <file>inchoo_gift.xml</file>
+                </inchoo_gift>
+            </updates>
+        </layout>
+    </frontend>
+</config>

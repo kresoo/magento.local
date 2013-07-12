@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+     <menu>
+           <sales>
+               <children>
+                   <inchoo_support translate="title" module="inchoo_support">
+                         <title>Support tickets</title>
+                         <action>adminhtml/ticket/</action>
+                   </inchoo_support>
+                </children>
+           </sales>
+     </menu>
+     <acl>
+         <resources>
+             <admin>
+                 <children>
+                     <sales>
+                         <children>
+                            <inchoo_support translate="title" module="inchoo_support">
+                                <title>Support tickets permissions</title>
+                                <sort_order>40</sort_order>
+                            </inchoo_support>
+                         </children>
+                     </sales>
+                 </children>
+             </admin>
+         </resources>
+     </acl>
+</config>

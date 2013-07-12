@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<layout>
+    <customer_account> <!-- user account path -->
+        <reference name="customer_account_navigation"> <!-- part of page where to insert new link -->
+            <action method="addLink"> <!-- adding new link -->
+                <name>my_images</name>
+                <path>inchoo_image/image/index</path>
+                <label>My images</label>
+            </action>
+        </reference>
+    </customer_account>
+    
+    <inchoo_image_image_index>
+        <update handle="customer_account" />
+        <reference name="my.account.wrapper">
+            <block type="core/template" name="inchoo_image_content" template="inchoo/image/index.phtml" />
+        </reference>
+    </inchoo_image_image_index>
+    
+    <inchoo_image_image_new>
+        <update handle="customer_account" />
+        <reference name="my.account.wrapper">
+            <block type="core/template" name="inchoo_new_image" template="inchoo/image/new.phtml" />
+        </reference>
+    </inchoo_image_image_new>
+    
+</layout>

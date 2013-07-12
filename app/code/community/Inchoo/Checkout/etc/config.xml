@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Inchoo_Checkout>
+            <version>1.0.0.0</version>
+        </Inchoo_Checkout>
+    </modules>
+    <global> 	
+        <blocks>    
+            <inchoo_checkout>
+                <class>Inchoo_Checkout_Block</class>
+            </inchoo_checkout>      
+            <checkout> 
+                <rewrite>
+                    <onepage>Inchoo_Checkout_Block_Onepage</onepage>  <!-- rewrite block Mage/Checkout/Block/Onepage.php -->
+                    <onepage_progress>Inchoo_Checkout_Block_Onepage_Progress</onepage_progress>  <!-- rewrite block Mage/Checkout/Block/Onepage/Progress.php -->
+                </rewrite> 
+            </checkout>                          
+        </blocks>
+        
+        <rewrite>
+            <inchoo_checkout_onepage> <!--This can be any unique id -->
+                <from><![CDATA[#^/checkout/onepage/#]]></from>  <!-- the URL which u want to override-->
+                <to>/checkoutnew/onepage/</to>  <!-- destination url -->
+            </inchoo_checkout_onepage>
+        </rewrite>
+
+        <events>
+            <checkout_onepage_controller_success_action>  <!-- event that is being observed --> 
+                <observers>
+                    <submit_custom_order> <!-- unique name for event -->
+                        <type>singleton</type>
+                        <class>Inchoo_Checkout_Model_Observer</class>   
+                        <method>saveOrderAfter</method>   
+                    </submit_custom_order>
+                </observers>
+            </checkout_onepage_controller_success_action>
+        </events> 
+
+        <models>
+            <inchoo_checkout>
+                <class>Inchoo_Checkout_Model</class>
+                <resourceModel>inchoo_checkout_resource</resourceModel>
+            </inchoo_checkout>
+            <checkout>
+                <rewrite>
+                    <type_onepage>Inchoo_Checkout_Model_Type_Onepage</type_onepage>
+                </rewrite>
+            </checkout>
+            <inchoo_checkout_resource>
+                <class>Inchoo_Checkout_Model_Resource</class>
+                <entities>
+                    <order>
+                        <table>sales_order_custom</table>
+                    </order>
+                </entities>
+            </inchoo_checkout_resource>
+        </models>
+        
+        <resources>
+            <inchoo_checkout_setup>
+                <setup>
+                    <module>Inchoo_Checkout</module>
+                </setup>
+            </inchoo_checkout_setup>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <inchoo_checkout>
+                <use>standard</use>
+                <args>
+                    <module>Inchoo_Checkout</module>
+                    <frontName>checkoutnew</frontName>
+                </args>
+            </inchoo_checkout>
+        </routers>
+        <layout>
+            <updates>
+                <inchoo_checkout>
+                    <file>inchoo_checkout.xml</file>
+                </inchoo_checkout>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <custom>
+                    <file>custom.xml</file>
+                </custom>
+            </updates>
+        </layout>
+    </adminhtml> 
+</config>

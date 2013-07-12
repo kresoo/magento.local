@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink">
+                <name>my_support_tickets</name>
+                <path>inchoo_support/index/index</path>
+                <label>My support tickets</label>
+            </action>
+        </reference>
+    </customer_account>
+    <inchoo_support_index_index>
+        <update handle="customer_account" />
+        <reference name="my.account.wrapper">
+            <block type="core/template" name="inchoo_support_content" template="inchoo_support.phtml" />
+        </reference>
+    </inchoo_support_index_index>
+</layout>

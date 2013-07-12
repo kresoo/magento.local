@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<layout>
+    <mdg_giftregistry_index_index>
+        <reference name="content">
+            <block name="gift.list" type="inchoo_gift/list" template="gift/list.phtml" as="gift_list" />
+        </reference>
+    </mdg_giftregistry_index_index>
+    
+    <mdg_giftregistry_index_new>
+        <reference name="content">
+            <block name="gift.new" type="core/template" template="gift/new.phtml" as="gidt_new" />
+        </reference>
+    </mdg_giftregistry_index_new>
+    
+    <mdg_giftregistry_index_edit>
+    </mdg_giftregistry_index_edit>
+    
+    <mdg_giftregistry_view_view>
+    </mdg_giftregistry_view_view>
+    
+    <mdg_giftregistry_search_index>
+    </mdg_giftregistry_search_index>
+    
+    <mdg_giftregistry_search_results>
+    </mdg_giftregistry_search_results>
+</layout>

@@ -22,6 +22,7 @@ class Inchoo_Image_ImageController extends Mage_Core_Controller_Front_Action
         
         $this->loadLayout();
         $this->renderLayout();
+
     }
     
     public function saveimageAction()

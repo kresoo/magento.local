@@ -16,14 +16,7 @@
                     <onepage>Inchoo_Checkout_Block_Onepage</onepage>  <!-- rewrite block Mage/Checkout/Block/Onepage.php -->
                     <onepage_progress>Inchoo_Checkout_Block_Onepage_Progress</onepage_progress>  <!-- rewrite block Mage/Checkout/Block/Onepage/Progress.php -->
                 </rewrite> 
-
-            <checkout>
-                <rewrite>
-                    <onepage>Inchoo_Checkout_Block_Onepage</onepage>
-                    <onepage_progress>Inchoo_Checkout_Block_Onepage_Progress</onepage_progress>
-                </rewrite>
-
-            </checkout>                          
+            </checkout>                     
         </blocks>
         
         <rewrite>
@@ -34,15 +27,9 @@
         </rewrite>
 
         <events>
-
             <checkout_onepage_controller_success_action>  <!-- event that is being observed --> 
                 <observers>
                     <submit_custom_order> <!-- unique name for event -->
-
-            <checkout_onepage_controller_success_action>   
-                <observers>
-                    <submit_custom_order>
-
                         <type>singleton</type>
                         <class>Inchoo_Checkout_Model_Observer</class>   
                         <method>saveOrderAfter</method>   

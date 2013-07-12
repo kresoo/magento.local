@@ -10,7 +10,6 @@
                 </children>
            </sales>
      </menu>
-
      <acl>
          <resources>
              <admin>
@@ -27,5 +26,4 @@
              </admin>
          </resources>
      </acl>
-
 </config>

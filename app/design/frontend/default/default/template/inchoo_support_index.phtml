@@ -1,11 +1,11 @@
 <?php
 
 $userId = Mage::getSingleton('customer/session')->getCustomer()->getId();
-<<<<<<< HEAD
+
 $ticketCollection = Mage::getModel('inchoo_support/ticket')->getCollection()->addFieldToFilter('user_id', array ('eq' => $userId));
-=======
+
 $ticketCollection = Mage::getModel('inchoo_support/ticket')->getCollection()->addFieldToFilter('user_id', array (eq => $userId));
->>>>>>> 8c92ffa211c6f50723866237e28cde4989e3d55f
+
 
 ?>
 <div class="page-title">

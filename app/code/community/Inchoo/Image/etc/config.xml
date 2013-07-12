@@ -24,9 +24,9 @@
             <inchoo_image_resource>
                 <class>Inchoo_Image_Model_Resource</class>
                 <entities>
-                    <inchooimage>
+                    <image>
                         <table>inchoo_image</table>
-                    </inchooimage>
+                    </image>
                 </entities>
             </inchoo_image_resource>
         </models>    

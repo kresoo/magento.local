@@ -12,7 +12,11 @@ class Inchoo_Checkout_OnepageController extends Mage_Checkout_OnepageController 
             /*
             * first to check payment information entered is correct or not
             */
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 8c92ffa211c6f50723866237e28cde4989e3d55f
             try {
                 $result = $this->getOnepage()->savePayment($data);
             }

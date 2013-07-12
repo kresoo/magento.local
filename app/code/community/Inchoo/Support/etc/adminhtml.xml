@@ -10,6 +10,7 @@
                 </children>
            </sales>
      </menu>
+<<<<<<< HEAD
      <acl>
          <resources>
              <admin>
@@ -26,4 +27,6 @@
              </admin>
          </resources>
      </acl>
+=======
+>>>>>>> 8c92ffa211c6f50723866237e28cde4989e3d55f
 </config>

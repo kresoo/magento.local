@@ -21,6 +21,10 @@
         <update handle="customer_account" />
         <reference name="my.account.wrapper">
             <block type="core/template" name="inchoo_support_content" template="inchoo_support_view.phtml" />
+<<<<<<< HEAD
         </reference>        
+=======
+        </reference>
+>>>>>>> 8c92ffa211c6f50723866237e28cde4989e3d55f
     </inchoo_support_ticket_view>
 </layout>

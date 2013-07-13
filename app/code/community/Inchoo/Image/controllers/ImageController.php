@@ -24,13 +24,25 @@ class Inchoo_Image_ImageController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
     
+    public function viewAction()
+    {
+        if( !Mage::getSingleton('customer/session')->isLoggedIn() ) {
+            Mage::getSingleton('customer/session')->authenticate($this);
+            return;
+        }
+        
+        $this->loadLayout();
+        $this->renderLayout();
+    }
+
+
     public function saveimageAction()
     {
         if(isset($_FILES['uploaded_image'])){
             try{
                 $uploader = new Varien_File_Uploader('uploaded_image');
                
-                $uploader->setAllowedExtensions(array('jpg','jpeg','git','png'))
+                $uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'))
                          ->setAllowRenameFiles(true)
                          ->setAllowCreateFolders(true);
                 

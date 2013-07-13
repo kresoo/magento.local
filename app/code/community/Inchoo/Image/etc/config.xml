@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
-        <inchoo_image>
+        <Inchoo_Image>
             <version>1.0.0.0</version>
-        </inchoo_image>
+        </Inchoo_Image>
     </modules>
     <global>
         <blocks>

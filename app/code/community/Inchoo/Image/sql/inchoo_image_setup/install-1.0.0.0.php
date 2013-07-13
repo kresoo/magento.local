@@ -14,11 +14,14 @@ $table = $installer->getConnection()
         ->addColumn('user_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
             'nullable' => false
         ),"User ID")
-        ->addColumn('image_name', Varien_Db_Ddl_Table::TYPE_VARCHAR, null, array(
+        ->addColumn('image_name', Varien_Db_Ddl_Table::TYPE_VARCHAR, 50, array(
             'nullable' => false
-        ),"Image name");
+        ),"Image name")
+        ->addColumn('image_title', Varien_Db_Ddl_Table::TYPE_VARCHAR,50 , array(
+            'nullable' => false
+        ),"Image title");
 
-$installer->getConnection()->creteTable($table);
+$installer->getConnection()->createTable($table);
 
 $installer->endSetup();
 

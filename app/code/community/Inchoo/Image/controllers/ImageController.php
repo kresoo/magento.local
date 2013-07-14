@@ -52,7 +52,7 @@ class Inchoo_Image_ImageController extends Mage_Core_Controller_Front_Action
                 $uploader->save($image_folder);
                 
                 $user_id = Mage::getSingleton('customer/session')->getCustomer()->getId();
-                $image_name = $_FILES['uploaded_image']['name'];
+                $image_name = $user_email . DS . $_FILES['uploaded_image']['name'];
                 $image_title = $this->getRequest()->getParam('title');
 
                 $image = Mage::getModel('inchoo_image/image')

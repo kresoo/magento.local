@@ -13,7 +13,15 @@ class Inchoo_Image_Block_Adminhtml_Image_Grid extends Mage_Adminhtml_Block_Widge
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('inchoo_image/image')->getCollection();
-        $collection->getSelect()->join(array('a'=>'customer_entity'),'a.entity_id=main_table.user_id',array('a.email'));
+        $fn = Mage::getModel('eav/entity_attribute')->loadByCode('1', 'firstname');
+        $ln = Mage::getModel('eav/entity_attribute')->loadByCode('1', 'lastname');
+        $collection->getSelect()
+                    ->join(array('ce1' => 'customer_entity_varchar'), 'ce1.entity_id=main_table.user_id', array('firstname' => 'value'))
+                    ->where('ce1.attribute_id='.$fn->getAttributeId()) 
+                    ->join(array('ce2' => 'customer_entity_varchar'), 'ce2.entity_id=main_table.user_id', array('lastname' => 'value'))
+                    ->where('ce2.attribute_id='.$ln->getAttributeId()) 
+                    ->columns(new Zend_Db_Expr("CONCAT(`ce1`.`value`, ' ',`ce2`.`value`) AS customer_name"));
+        //$collection->getSelect()->join(array('a'=>'customer_entity'),'a.entity_id=main_table.user_id',array('a.email'));
         $this->setCollection($collection);
         parent::_prepareCollection();
 
@@ -43,7 +51,8 @@ class Inchoo_Image_Block_Adminhtml_Image_Grid extends Mage_Adminhtml_Block_Widge
         $this->addColumn('created_by', array(
             'header'    => Mage::helper('inchoo_support')->__('Created by'),
             'align'     => 'center',
-            'index'     => 'email',
+            'index'     => 'customer_name',
+            'filter_name' => 'customer_name'
         ));
  
         return parent::_prepareColumns();

@@ -1,7 +1,7 @@
 <?php 
     $images = $this->getImagesByUserId();
     $user_email = Mage::getSingleton('customer/session')->getCustomer()->getEmail();
-    $image_folder = Mage::getBaseUrl('media') . DS . 'inchooimages' . DS .  $user_email;
+    $image_folder = Mage::getBaseUrl('media') . DS . 'inchooimages';
 ?>
 <div class="page-title">
     <h1><?php echo $this->__('My images') ?></h1>

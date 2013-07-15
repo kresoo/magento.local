@@ -24,4 +24,10 @@
         </reference>
     </inchoo_image_image_new>
     
+    <inchoo_image_image_view>
+        <update handle="customer_account" />
+        <reference name="my.account.wrapper">  
+            <block type="inchoo_image/viewimage" name="inchoo_view_image" template="inchoo/image/view.phtml" />
+        </reference>
+    </inchoo_image_image_view>
 </layout>

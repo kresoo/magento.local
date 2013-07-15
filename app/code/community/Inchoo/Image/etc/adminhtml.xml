@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <customer>
+            <children>
+                <inchoo_image translate="title" module="inchoo_image">
+                    <title>Uploaded images</title>
+                    <action>adminhtml/image/</action>
+                </inchoo_image>
+            </children>
+        </customer>
+    </menu>
+</config>

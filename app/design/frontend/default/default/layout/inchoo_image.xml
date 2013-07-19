@@ -10,7 +10,7 @@
         </reference>
     </customer_account>
     
-    <inchoo_image_image_index>
+    <inchoo_image_image_index> 
         <update handle="customer_account" />
         <reference name="my.account.wrapper">
             <block type="core/template" name="inchoo_image_content" template="inchoo/image/index.phtml" />
@@ -21,7 +21,7 @@
         <update handle="customer_account" />
         <reference name="my.account.wrapper">
             <block type="core/template" name="inchoo_new_image" template="inchoo/image/new.phtml" />
-        </reference>
+        </reference> 
     </inchoo_image_image_new>
     
     <inchoo_image_image_view>

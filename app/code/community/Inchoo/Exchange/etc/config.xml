@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Inchoo_Exchange>
-            <version>1.0.0.0</version>
+            <version>1.0.0.1</version>
         </Inchoo_Exchange>
     </modules>
 
@@ -30,6 +30,9 @@
                     <exchangerate>
                         <table>inchoo_exchange_rate</table>
                     </exchangerate>
+                    <testtable>
+                        <table>inchoo_exchange_testtable</table>
+                    </testtable>
                 </entities>
             </inchoo_exchange_resource>
         </models>

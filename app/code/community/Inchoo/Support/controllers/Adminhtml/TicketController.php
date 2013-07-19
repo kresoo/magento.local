@@ -48,7 +48,7 @@ class Inchoo_Support_Adminhtml_TicketController extends Mage_Adminhtml_Controlle
         return $this->_redirect('*/*/edit', array('id' => $request->getParam('ticket_id'))); 
     }
     
-        public function gridAction()
+    public function gridAction()
     {
         $this->loadLayout();
         $this->getResponse()->setBody(

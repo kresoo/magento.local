@@ -11,7 +11,7 @@ class Inchoo_Checkout_Model_Observer {
                 ->setValue($comment['like'])
                 ->save();
         
-        unset(Mage::getSingleton('core/session')->getComment());
+        //unset(Mage::getSingleton('core/session')->getComment());
     }
     
     

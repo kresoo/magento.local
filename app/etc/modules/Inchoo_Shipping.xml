@@ -2,7 +2,7 @@
 <config>
         <modules>
             <Inchoo_Shipping>
-                <active>true</active>
+                <active>false</active>
                 <codePool>community</codePool>
             </Inchoo_Shipping>
         </modules>

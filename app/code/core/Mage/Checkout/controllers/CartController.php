@@ -114,7 +114,7 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
         }
         return false;
     }
-
+    
     /**
      * Shopping cart display action
      */

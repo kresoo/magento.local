@@ -11,6 +11,7 @@ class Inchoo_Image_ImageController extends Mage_Core_Controller_Front_Action
         
         $this->loadLayout();
         $this->renderLayout();
+        //zend_debug::dump($this->getLayout()->getUpdate()->getHandles());die();
     }
     
     public function newAction()

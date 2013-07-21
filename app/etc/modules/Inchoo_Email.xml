@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<config>
-    <modules>
-        <Inchoo_Email>
-            <active>true</active>
-            <codePool>community</codePool>
-        </Inchoo_Email>
-    </modules>
-</config>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Inchoo_Message>
+            <version>1.0.0</version>
+        </Inchoo_Message>
+    </modules>
+    <global>
+        <blocks>
+            <inchoo_message>
+                <class>Inchoo_Message_Block</class>
+            </inchoo_message>
+        </blocks>
+        <helpers>
+            <inchoo_message>
+                <class>Inchoo_Message_Helper</class>
+            </inchoo_message>
+        </helpers>
+        <models>
+            <inchoo_message>
+                <class>Inchoo_Message_Model</class>
+                <resourceModel>inchoo_message_resource</resourceModel>
+            </inchoo_message>
+            <inchoo_message_resource>
+                <class>Inchoo_Message_Model_Resource</class>
+                <entities>
+                    <message>
+                        <table>inchoo_message</table>
+                    </message>
+                </entities>
+            </inchoo_message_resource>
+        </models>
+        <resources>
+            <inchoo_message_setup>
+                <setup>
+                    <module>Inchoo_Message</module>
+                    <class>Inchoo_Message_Model_Resource_Setup</class>
+                </setup>
+            </inchoo_message_setup>
+        </resources>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <inchoo_message before="Mage_Adminhtml">Inchoo_Message_Adminhtml</inchoo_message>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

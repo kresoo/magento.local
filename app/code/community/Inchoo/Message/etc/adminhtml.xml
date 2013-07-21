@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <customer>
+            <children>
+                <inchoo_message translate="title" module="inchoo_message">
+                    <title>Customer messages</title>
+                    <action>adminhtml/message/</action>
+                </inchoo_message>
+            </children>
+        </customer>
+    </menu>
+</config>
